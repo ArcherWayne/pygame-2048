@@ -75,6 +75,7 @@ def init_array():
 
 def generate_numbers():
     zero_index_list = []
+    
     zero_index = 0
     for i_gn in array2048_1:
         if i_gn == 0:
@@ -84,8 +85,22 @@ def generate_numbers():
     if zero_index_list:
         array2048_1[random.choice(zero_index_list)] = random.choice([2, 2, 2, 2, 2, 2, 2, 2, 2, 4])
     else:
-        game_active = False
-        print(game_active)
+        # 此处添加一个检查不能再继续生成的公式
+        game_over_flag_list = []
+        for y in range(0, 12, 4):
+            for x in range(4):
+                if array2048_1[x+y] == array2048_1[x+y+4]:
+                    # game_over_flag = 0
+        for y in range(12, 0 ,-4):
+            for x in range(4):
+                if array2048_1[x+y] == array2048_1[x+y-4]:
+                    # game_over_flag = 0
+        for x in range()
+
+
+
+            
+
 
 
 def show_infomation():
