@@ -1,25 +1,21 @@
-import random
+def append_list():
+    list.append('小毛')
 
-# lis = [2, 0, 2, 4]
-lis = []
-for i in range(4):
-    lis.append(random.choice([0, 2, 2, 4]))
+def assign_list():
+    list = ['嘿几把小毛']
 
-print(lis)
+def assign_list_returned(list):
+    list = ["小毛嘿几把"]
+    return list
 
-for c in range(3):
-    for x in range(c+1, 4):
-        if lis[x] != 0:
-            if lis[c] == 0:
-                lis[c] = lis[x]
-                lis[x] = 0
-            elif lis[c] == lis[x]:
-                lis[c] *= 2
-                lis[x] = 0
-                break
-            elif lis[c] != lis[x]:
-                break
+list = ['嘿', '几', '吧']
+print(list)
 
-print(lis)
+append_list()
+print(list)
 
+assign_list()
+print(list)
 
+list2 = assign_list_returned(list)
+print(list2)
