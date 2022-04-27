@@ -11,20 +11,20 @@ from debug import debug
 pygame.init()
 pygame.display.set_caption('2048')
 clock = pygame.time.Clock()
-screen_size = (320, 370)
-block_size = (60, 60)
+screen_size = (305, 360)
+block_size = (70, 70)
 num_font = pygame.font.Font(None, 50)
 game_over = num_font.render('game over', True, (255, 255,255))
-block_locations = [(10, 60), (90, 60), (170, 60), (250, 60), \
-                   (10, 140), (90, 140), (170, 140), (250, 140), \
-                   (10, 220), (90, 220), (170, 220), (250, 220), \
-                   (10, 300), (90, 300), (170, 300), (250, 300)]
+block_locations = [(5, 60), (80, 60), (155, 60), (230, 60), \
+                   (5, 135), (80, 135), (155, 135), (230, 135), \
+                   (5, 210), (80, 210), (155, 210), (230, 210), \
+                   (5, 285), (80, 285), (155, 285), (230, 285)]
 
 array2048_1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-colors = {0: '#dadbd9', 2: '#ced9bd', 4: '#bbd989', 8: '#aad959', 16: '#78ab20', 32: '#619605', 64: '#cf765b',
-          128: '#cc5531', 256: '#cf451b', 512: '#c2360c', 1024: '#8f2100', 2048: '#fce805', \
-          4096: '#ad9f02', 8192: '#827700', 16384: '#2b4bff', 32768: '#7033ff', 65536: '#cc0cf2', 131072: '#000000'}
+colors = {0: '#F3F3CC', 2: '#008E9B', 4: '#0089BA', 8: '#0081CF', 16: '#2C73D2', 32: '#845EC2', 64: '#F9F871',
+          128: '#FFC75F', 256: '#FF9671', 512: '#FF6F91c', 1024: '#D65DB1', 2048: '#845EC2', \
+          4096: '#C34A36', 8192: '#B43E5F', 16384: '#904579', 32768: '#624D7F', 65536: '#3C4E71', 131072: '#2F4858'}
 
 
 # 访问字典里的值: 把相应的键放入到方括号中
@@ -227,7 +227,7 @@ def main():
                     game_active = generate_numbers(game_active)
         
         if game_active == True:
-            screen.fill('#123456')
+            screen.fill('#FEFEDF')
 
             block_sprites.update(array2048_1, colors, block_locations)
             block_sprites.draw(screen)
@@ -237,8 +237,8 @@ def main():
         else:
             block_sprites.empty()
             number_sprites.empty()
-            screen.fill('#654321')
-            screen.blit(game_over, (160, 185))
+            screen.fill('#F3C5FF')
+            screen.blit(game_over, (40, 50))
 
         pygame.display.update()  # 这一句话必须放在组绘图和组更新的后面
         clock.tick(60)
