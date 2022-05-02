@@ -116,16 +116,9 @@ def generate_numbers(game_active):
     game_active = not game_over_flag
     return game_active
 
-
-"""
-[0  1  2   3]
-[4  5  6   7]
-[8  9  10 11]
-[12 13 14 15]
-"""
-
 def show_infomation():
-    pass
+    game_title = num_font.render('2048', True, (0, 0,0))
+    screen.blit(game_title, (10, 10))
 
 # group setup
 block_sprites = pygame.sprite.Group()
@@ -233,6 +226,7 @@ def main():
             block_sprites.draw(screen)
             number_sprites.update(array2048_1, block_locations)
             number_sprites.draw(screen)
+            show_infomation()
             
         else:
             block_sprites.empty()
